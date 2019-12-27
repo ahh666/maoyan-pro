@@ -1,6 +1,10 @@
 <template>
   <div class="tab-bar">
-    <div :class="['tab-bar-item', pickerBar(item.to) && 'active']" v-for="item in tabBarList" :key="item.to"
+    <div
+      class="tab-bar-item"
+      v-for="item in tabBarList"
+      :key="item.to"
+      :style="{ color: pickerBar(item.to) }"
       @click="handleJump(item.to)"
     >
       <div class="icon">
@@ -20,31 +24,28 @@ import Icon from './Icon.vue'
   }
 })
 export default class TabBar extends Vue {
-  @Prop({type: Array, required: true}) private tabBarList!: Array<tabBarList>
+  @Prop({ type: Array, required: true }) private tabBarList!: Array<tabBarList>
+  @Prop({ type: String, default: '#e54847' }) private activeBarColor?: string
 
-  private activeBar = this.tabBarList[0].to
-
-  private mounted() {
-    console.log(this.$route.name);
-    console.log(this.$route.path);
-    console.log(this.$route.fullPath);
-    
+  private get activeBar() {
+    return this.$route.path
   }
 
   private pickerBar(bar: string) {
-    return bar === this.activeBar
+    if (bar === this.activeBar) {
+      return this.activeBarColor
+    }
+    return ''
   }
 
   private handleJump(url: string) {
-    if(url.includes('http')) {
+    if (url === this.activeBar) return
+    if (url.includes('http')) {
       location.href = url
     } else {
       this.$router.replace(url)
-      this.activeBar = url
     }
   }
-  
-
 }
 </script>
 

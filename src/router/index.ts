@@ -19,6 +19,11 @@ const routes = [
     name: 'mine',
     component: () => import('../views/mine/index.vue')
   },
+  {
+    path: '/movie-detail',
+    name: 'movieDetail',
+    component: () => import('../views/movie-detail/index.vue')
+  },
 ]
 
 const router = new VueRouter({

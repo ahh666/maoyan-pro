@@ -1,8 +1,8 @@
 $theme: #e54847;
 $red: #e54847;
-$green: #00A77B;
-$bg: rgba(237,240,247,1);
-$fontfmMd:PingFangSC-Medium,PingFangSC;
+$green: #00a77b;
+$bg: rgba(237, 240, 247, 1);
+$fontfmMd: PingFangSC-Medium, PingFangSC;
 @mixin setFlexDisplay($direction: row, $justify: center, $align: center) {
   display: flex;
   flex-direction: $direction;
@@ -44,4 +44,3 @@ $fontfmMd:PingFangSC-Medium,PingFangSC;
   @include setFixed($pos, $offset, $height);
   position: absolute;
 }
-

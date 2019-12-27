@@ -11,14 +11,11 @@ import { Component, Vue, Prop } from 'vue-property-decorator'
 })
 export default class Icon extends Vue {
   @Prop(String) private name!: string
-  
-  private get iconTag() : string {
+
+  private get iconTag(): string {
     return `icon-${this.name}`
   }
-  
 }
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

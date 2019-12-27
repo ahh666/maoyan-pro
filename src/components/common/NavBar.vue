@@ -2,9 +2,9 @@
   <header>
     <div class="nav">
       <div class="nav-left" @click="back">
-        <ai-icon v-if="showLeft" name="fanhui" />
+        <ai-icon v-if="showBack" name="fanhui" />
       </div>
-      <div class="nav-title">{{title}}</div>
+      <div class="nav-title">{{ title }}</div>
       <div class="nav-right">
         <slot name="right">
           <p v-if="showRight">完成</p>
@@ -22,8 +22,8 @@ import { Component, Vue, Prop } from 'vue-property-decorator'
 })
 export default class NavBar extends Vue {
   @Prop(String) private title!: string
-  @Prop({type: Boolean, default: true}) private showLeft?: boolean
-  @Prop({type: Boolean, default: false}) private showRight?: boolean
+  @Prop({ type: Boolean, default: true }) private showBack?: boolean
+  @Prop({ type: Boolean, default: false }) private showRight?: boolean
 
   private back() {
     this.$router.back()
@@ -44,6 +44,7 @@ $default-height: 50px;
   color: #fff;
   > div {
     width: 30%;
+    white-space: nowrap;
   }
   > .nav-title {
     text-align: center;

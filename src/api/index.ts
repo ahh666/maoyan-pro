@@ -1,4 +1,4 @@
-import { BaseAPI } from "./base"
+import { BaseAPI } from './base'
 
 class API extends BaseAPI {
   getMovieOnInfoList() {
@@ -9,6 +9,9 @@ class API extends BaseAPI {
   }
   getComingList() {
     return this.get('/comingList')
+  }
+  getDetailMovie(params: {movieId: string}) {
+    return this.get('/detailmovie', {params})
   }
 }
 

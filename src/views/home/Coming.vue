@@ -6,18 +6,22 @@
       <div class="img-list">
         <div class="wish-list" v-for="movie in expectedList" :key="movie.id">
           <div class="hope-img">
-            <img :src="movie.img.replace('w.h','128.180')" />
-            <p class="wish">{{movie.wish}}想看</p>
+            <img :src="movie.img.replace('w.h', '128.180')" />
+            <p class="wish">{{ movie.wish }}想看</p>
           </div>
           <div class="wish-info">
-            <p class="name">{{movie.nm}}</p>
-            <p class="show-time">{{movie.comingTitle}}</p>
+            <p class="name">{{ movie.nm }}</p>
+            <p class="show-time">{{ movie.comingTitle }}</p>
           </div>
         </div>
       </div>
     </div>
     <div class="coming">
-      <MovieList v-for="movie in comingList" :key="movie.id" :movieInfo="movie" />
+      <MovieList
+        v-for="movie in comingList"
+        :key="movie.id"
+        :movieInfo="movie"
+      />
     </div>
   </div>
 </template>
@@ -28,7 +32,7 @@ import MovieList from '@/components/MovieList.vue'
 
 @Component({
   components: {
-    MovieList,
+    MovieList
   }
 })
 export default class Coming extends Vue {
@@ -44,21 +48,17 @@ export default class Coming extends Vue {
   }
 
   private getMostExpected() {
-    this.$api.getMostExpected().then(
-      res => {
-        this.expectedList = res.coming
-        this.expectedDataReady = true
-      }
-    )
+    this.$api.getMostExpected().then(res => {
+      this.expectedList = res.coming
+      this.expectedDataReady = true
+    })
   }
   private getComingList() {
-    this.$api.getComingList().then(
-      res => {
-        this.comingList = res.coming
-        this.MoreComingIds = res.movieIds
-        this.comingDataReady = true
-      }
-    )
+    this.$api.getComingList().then(res => {
+      this.comingList = res.coming
+      this.MoreComingIds = res.movieIds
+      this.comingDataReady = true
+    })
   }
 }
 </script>
@@ -93,7 +93,7 @@ export default class Coming extends Vue {
       > .hope-img {
         position: relative;
         &::before {
-          content: "♡";
+          content: '♡';
           color: #ccc;
           font-size: 14px;
           text-align: center;

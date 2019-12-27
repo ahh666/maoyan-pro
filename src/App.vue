@@ -6,12 +6,10 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator'
 
 @Component({
-  components: {
-    
-  },
+  components: {}
 })
 export default class App extends Vue {
   private tabBarList: Array<tabBarList> = [
@@ -29,7 +27,7 @@ export default class App extends Vue {
       name: 'wode',
       text: '我的',
       to: '/mine'
-    },
+    }
   ]
 }
 </script>

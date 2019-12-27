@@ -1,5 +1,5 @@
-import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
-import config, { PATH } from "./config";
+import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios'
+import config, { PATH } from './config'
 
 export class BaseAPI {
   public hanlder: AxiosInstance
@@ -18,9 +18,11 @@ export class BaseAPI {
   }
 
   public get(url: string, config?: AxiosRequestConfig) {
+    const params = config && config.params || {}
     config = {
       ...config,
       params: {
+        ...params,
         ci: 50,
         limit: 10,
         token: ''

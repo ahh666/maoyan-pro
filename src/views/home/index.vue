@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ai-navbar title="猫眼电影" :showLeft="false" :showRight="false" />
+    <ai-navbar title="猫眼电影" :showBack="false" />
     <div class="top">
       <ul class="topNav">
         <li :class="[showHot === 1 ? 'active' : '']" @click="showHot = 1">

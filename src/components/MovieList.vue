@@ -2,7 +2,7 @@
   <div>
     <div
       class="movie-list"
-      @click="$router.push({ name: 'movieDetail', query: { id: movieInfo.id } })"
+      @click="$router.push({ name: 'movieDetail', query: { movieId: movieInfo.id } })"
     >
       <div class="movie-img">
         <img :src="movieInfo.img.replace('w.h', '128.180')" />
