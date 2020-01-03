@@ -22,10 +22,10 @@ export class BaseAPI {
     config = {
       ...config,
       params: {
-        ...params,
         ci: 50,
         limit: 10,
-        token: ''
+        token: '',
+        ...params
       }
     }
     return this.hanlder.get(url, config).then(this._transfromResponse)

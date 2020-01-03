@@ -1,17 +1,20 @@
 import { BaseAPI } from './base'
 
 class API extends BaseAPI {
-  getMovieOnInfoList() {
+  public getMovieOnInfoList() {
     return this.get('/movieOnInfoList')
   }
-  getMostExpected() {
+  public getMostExpected() {
     return this.get('/mostExpected')
   }
-  getComingList() {
+  public getComingList() {
     return this.get('/comingList')
   }
-  getDetailMovie(params: {movieId: string}) {
-    return this.get('/detailmovie', {params})
+  public getDetailMovie(params: { movieId: string }) {
+    return this.get('/detailmovie', { params })
+  }
+  public getMoreList(params: { movieIds: string }) {
+    return this.get('/moreComingList', { params })
   }
 }
 
