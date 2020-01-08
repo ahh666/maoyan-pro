@@ -10,4 +10,9 @@ declare global {
       [elem: string]: any
     }
   }
+  interface Window {
+    eruda: {
+      init: () => void
+    }
+  }
 }

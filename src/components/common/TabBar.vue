@@ -24,7 +24,7 @@ import Icon from './Icon.vue'
   }
 })
 export default class TabBar extends Vue {
-  @Prop({ type: Array, required: true }) private tabBarList!: Array<tabBarList>
+  @Prop({ type: Array, required: true }) private tabBarList!: Array<TabBarList>
   @Prop({ type: String, default: '#e54847' }) private activeBarColor?: string
 
   private get activeBar() {

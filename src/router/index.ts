@@ -24,6 +24,16 @@ const routes = [
     name: 'movieDetail',
     component: () => import('../views/movie-detail/index.vue')
   },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('../views/user/Login.vue')
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: () => import('../views/user/Register.vue')
+  },
 ]
 
 const router = new VueRouter({

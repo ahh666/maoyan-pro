@@ -12,7 +12,7 @@ import { Component, Vue } from 'vue-property-decorator'
   components: {}
 })
 export default class App extends Vue {
-  private tabBarList: Array<tabBarList> = [
+  private tabBarList: Array<TabBarList> = [
     {
       name: 'dianying',
       text: '首页',

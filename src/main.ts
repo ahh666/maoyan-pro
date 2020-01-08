@@ -9,6 +9,10 @@ Vue.prototype.$api = API
 
 Vue.config.productionTip = false
 
+if (process.env.NODE_ENV !== 'production') {
+  window.eruda.init();
+}
+
 new Vue({
   router,
   store,

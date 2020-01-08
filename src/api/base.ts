@@ -22,9 +22,10 @@ export class BaseAPI {
     config = {
       ...config,
       params: {
-        ci: 50,
-        limit: 10,
         token: '',
+        optimus_uuid: '9A30E180254411EA8437C766E39956A865F4E8808B544F13AE18A05FAEF5B90E',
+        optimus_risk_level: 71,
+        optimus_code: 10,
         ...params
       }
     }

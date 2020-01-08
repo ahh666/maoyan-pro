@@ -1,3 +1,5 @@
+const isProd = process.env.NODE_ENV === 'production'
+
 module.exports = {
   publicPath: './',
   devServer: {
@@ -9,6 +11,17 @@ module.exports = {
           '^/ajax': '/ajax' 
         }
       }
+    }
+  },
+  chainWebpack: config => {
+    if (!isProd) {
+      config
+        .plugin('html-link')
+        .use(require('html-webpack-link-plugin'), [{
+          js: ['https://cdn.bootcss.com/eruda/1.5.4/eruda.min.js'],
+          before: true,
+        }])
+        .end()
     }
   }
 }

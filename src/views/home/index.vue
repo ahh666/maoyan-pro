@@ -39,6 +39,7 @@ export default class Movie extends Vue {
   top: 50px;
   width: 100%;
   position: fixed;
+  z-index: 9;
 }
 .topNav {
   height: 44px;

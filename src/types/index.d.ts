@@ -1,4 +1,4 @@
-interface tabBarList {
+interface TabBarList {
   /** nav图标 */
   name: string,
   text: string,
