@@ -13,11 +13,25 @@
       "unicode_decimal": 58909
     },
     {
+      "icon_id": "1055090",
+      "name": "展开",
+      "font_class": "webicon215",
+      "unicode": "e68d",
+      "unicode_decimal": 59021
+    },
+    {
       "icon_id": "1440886",
       "name": "返回顶部 ",
       "font_class": "fanhuidingbu",
       "unicode": "e633",
       "unicode_decimal": 58931
+    },
+    {
+      "icon_id": "5301930",
+      "name": "搜索",
+      "font_class": "sousuo",
+      "unicode": "e62e",
+      "unicode_decimal": 58926
     },
     {
       "icon_id": "5532882",

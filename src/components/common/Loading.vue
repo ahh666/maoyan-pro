@@ -20,7 +20,7 @@ export default class Loading extends Vue {}
 
 <style lang="scss" scoped>
 .loading {
-  position: fixed;
+  position: absolute;
   left: 0;
   right: 0;
   top: 0;
@@ -31,7 +31,7 @@ export default class Loading extends Vue {}
 .loading-bg {
   width: 160px;
   text-align: center;
-  position: relative;
+  position: absolute;
   padding: 20px;
   background: rgba(32, 32, 32, 0.493);
   top: 50%;

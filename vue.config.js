@@ -10,7 +10,14 @@ module.exports = {
         pathRewrite: { 
           '^/ajax': '/ajax' 
         }
-      }
+      },
+      '/dianying': {
+        target: 'http://m.maoyan.com', // 请求的目标服务器接口
+        changeOrigin: true, 
+        pathRewrite: { 
+          '^/dianying': '/dianying' 
+        }
+      },
     }
   },
   chainWebpack: config => {

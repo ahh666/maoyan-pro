@@ -1,6 +1,11 @@
 <template>
   <div class="load-list">
-    <slot></slot>
+    <div>
+      <slot></slot>
+      <div class="tip-finished" v-show="finished">
+        <p>-- 已经到底了 --</p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -46,4 +51,9 @@ export default class List extends Vue {
 </script>
 
 <style lang="scss" scoped>
+.tip-finished {
+  text-align: center;
+  font-size: 14px;
+  color: #999;
+}
 </style>

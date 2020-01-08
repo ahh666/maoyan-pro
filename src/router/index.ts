@@ -25,6 +25,11 @@ const routes = [
     component: () => import('../views/movie-detail/index.vue')
   },
   {
+    path: '/position',
+    name: 'position',
+    component: () => import('../views/position/index.vue')
+  },
+  {
     path: '/login',
     name: 'login',
     component: () => import('../views/user/Login.vue')

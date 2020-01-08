@@ -38,5 +38,6 @@ export default class App extends Vue {
   padding: 0;
   list-style-type: none;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 </style>

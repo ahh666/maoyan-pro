@@ -5,7 +5,8 @@ const URL = {
 
 export const PATH = {
   basePath: '/maoyanApi/ajax',
-  maoyanPath: '/ajax'
+  maoyanPath: '/ajax',
+  citiesPath: '/dianying'
 }
 
 export default {
