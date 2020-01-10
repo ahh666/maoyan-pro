@@ -5,3 +5,12 @@ interface TabBarList {
   /** 要跳转的url */
   to: string
 }
+interface CityItems {
+  id: number,
+  nm: string,
+  py: string
+}
+interface CityList {
+  tag: string,
+  items: CityItems
+}

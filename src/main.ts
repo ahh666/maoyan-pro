@@ -3,9 +3,11 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import API from './api'
+import Util from './util'
 import './ai-ui'
 
 Vue.prototype.$api = API
+Vue.prototype.$util = Util
 
 Vue.config.productionTip = false
 
