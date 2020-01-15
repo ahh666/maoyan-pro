@@ -773,6 +773,11 @@
     error-stack-parser "^2.0.0"
     string-width "^2.0.0"
 
+"@types/better-scroll@^1.12.1":
+  version "1.12.1"
+  resolved "https://registry.yarnpkg.com/@types/better-scroll/-/better-scroll-1.12.1.tgz#493d12ca4b5a23cf877bed2358cf0e0ca63cda98"
+  integrity sha512-jI/nmYl6+RbGsVIhJpqpoh09hC5Kf/OZiwYKCcfmoihpxxTPkeuNdz9DyRhdXf09Wgl1l9n/bOXXo9ucwgp4Lg==
+
 "@types/color-name@^1.1.1":
   version "1.1.1"
   resolved "https://registry.npm.taobao.org/@types/color-name/download/@types/color-name-1.1.1.tgz#1c1261bbeaa10a8055bbc5d8ab84b7b2afc846a0"

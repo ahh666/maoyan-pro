@@ -12,5 +12,5 @@ interface CityItems {
 }
 interface CityList {
   tag: string,
-  items: CityItems
+  items: CityItems[]
 }

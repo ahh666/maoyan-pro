@@ -17,6 +17,28 @@ const arraySort = (arr: CityItems[], type?: boolean) => {
   return arr.sort(sortAsc)
 }
 
+const cityListFormat = (list: CityItems[]): CityList[] => {
+  arraySort(list)
+  let cityList = []
+  let items = []
+  let tag = 'a'
+  const len = list.length
+  for(let i = 0; i < len; i++) {
+    if (list[i].py[0] === tag) {
+      items.push(list[i])
+    } else {
+      cityList.push({tag, items})
+      tag = String.fromCharCode(tag.charCodeAt(0) + 1)
+      items = []
+      continue
+    }
+    if (i === len - 1)
+      cityList.push({tag, items})
+  }
+  return cityList
+}
+
 export default {
-  arraySort
+  arraySort,
+  cityListFormat
 }

@@ -24,7 +24,7 @@ export default class List extends Vue {
     this.finished && this.scroller.finishPullUp()
   }
 
-  private scroller: any
+  private scroller: BScroll
 
   private mounted() {
     this.scroller = new BScroll(`.${this.listName}`, {

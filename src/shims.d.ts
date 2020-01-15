@@ -8,3 +8,5 @@ declare module 'vue/types/vue' {
     $util: typeof Util;
   }
 }
+
+// declare module 'better-scroll'
