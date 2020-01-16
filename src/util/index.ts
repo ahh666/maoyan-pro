@@ -12,7 +12,7 @@ const sortDesc = (a: CityItems, b: CityItems) => {
 }
 const arraySort = (arr: CityItems[], type?: boolean) => {
   const desc = type || false
-  if (desc) 
+  if (desc)
     return arr.sort(sortDesc)
   return arr.sort(sortAsc)
 }

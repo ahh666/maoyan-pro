@@ -8,6 +8,9 @@
         </div>
       </div>
     </div>
+    <div class="quick-nav">
+      <div class="quick-nav-item" v-for="tag in quickNav" :key="tag">{{tag}}</div>
+    </div>
   </div>
 </template>
 
@@ -16,7 +19,7 @@ import { Component, Vue } from 'vue-property-decorator'
 import BScroll from 'better-scroll'
 @Component({
   filters: {
-    toUpper:(letter: string) => {return letter.toUpperCase()}
+    toUpper:(letter: string) => { return letter.toUpperCase() }
   }
 })
 export default class Position extends Vue {
@@ -26,6 +29,7 @@ export default class Position extends Vue {
   private async created() {
     this.cityList = await this.initCityList()
     console.log(this.cityList)
+    console.log(this.quickNav)
   }
   private mounted() {
     this.scroller = new BScroll('.position-box', {
@@ -35,6 +39,14 @@ export default class Position extends Vue {
     // this.scroller.on('scroll', (pos) => {
     //   this.scrollY = pos.y
     // })
+  }
+
+  private get quickNav() {
+    return this.cityList.map(
+      a => {
+        return a.tag
+      }
+    )
   }
 
 
@@ -58,13 +70,10 @@ export default class Position extends Vue {
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/style/index.scss';
 .position-box {
   color: #333;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  @include setFixed();
   background: #f5f5f5;
   z-index: 11;
 }
@@ -81,5 +90,16 @@ export default class Position extends Vue {
     margin-left: 15px;
     border-bottom: 1px solid #c8c7cc;
   }
+}
+.quick-nav {
+  width: 20px;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background: #c8c7cc;
+  border-radius: 10px;
+  z-index: 13;
 }
 </style>
