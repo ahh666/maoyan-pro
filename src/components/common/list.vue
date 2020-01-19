@@ -1,11 +1,12 @@
 <template>
   <div class="load-list">
-    <div>
+    <div v-if="!rowList">
       <slot></slot>
       <div class="tip-finished" v-show="finished">
         <p>-- 已经到底了 --</p>
       </div>
     </div>
+    <slot name="rowList"></slot>
   </div>
 </template>
 

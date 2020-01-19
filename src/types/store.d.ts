@@ -13,3 +13,7 @@ interface UserLoginInfo {
   userHeadImg?: string | undefined,
   userAccountInfo: UserAccountInfo[],
 }
+
+interface HomeState {
+  position?: string
+}

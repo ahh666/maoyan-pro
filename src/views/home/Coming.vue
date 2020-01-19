@@ -5,23 +5,25 @@
       <div class="wish">
         <p>近期最受期待</p>
         <ai-list class="wish-list-box" listName="wish-list-box" :rowList="true">
-          <div class="img-list">
-            <div
-              class="wish-list"
-              v-for="movie in expectedList"
-              :key="movie.id"
-              @click="$router.push({ name: 'movieDetail', query: { movieId: movie.id }})"
-            >
-              <div class="hope-img">
-                <img :src="movie.img.replace('w.h', '128.180')" />
-                <p class="wish">{{ movie.wish }}想看</p>
-              </div>
-              <div class="wish-info">
-                <p class="name">{{ movie.nm }}</p>
-                <p class="show-time">{{ movie.comingTitle }}</p>
+          <template v-slot:rowList>
+            <div class="img-list">
+              <div
+                class="wish-list"
+                v-for="movie in expectedList"
+                :key="movie.id"
+                @click="$router.push({ name: 'movieDetail', query: { movieId: movie.id }})"
+              >
+                <div class="hope-img">
+                  <img :src="movie.img.replace('w.h', '128.180')" />
+                  <p class="wish">{{ movie.wish }}想看</p>
+                </div>
+                <div class="wish-info">
+                  <p class="name">{{ movie.nm }}</p>
+                  <p class="show-time">{{ movie.comingTitle }}</p>
+                </div>
               </div>
             </div>
-          </div>
+          </template>
         </ai-list>
       </div>
       <div class="coming">

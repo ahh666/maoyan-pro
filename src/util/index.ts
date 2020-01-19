@@ -27,7 +27,7 @@ const cityListFormat = (list: CityItems[]): CityList[] => {
     if (list[i].py[0] === tag) {
       items.push(list[i])
     } else {
-      cityList.push({tag, items})
+      items.length > 0 && cityList.push({tag, items})
       tag = String.fromCharCode(tag.charCodeAt(0) + 1)
       items = []
       continue
