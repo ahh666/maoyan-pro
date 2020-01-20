@@ -15,5 +15,7 @@ interface UserLoginInfo {
 }
 
 interface HomeState {
-  position?: string
+  position: string
+  showTabBar: boolean
+  posId: number | undefined
 }

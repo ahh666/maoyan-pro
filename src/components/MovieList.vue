@@ -2,10 +2,10 @@
   <div>
     <div
       class="movie-list"
-      @click="$router.push({ name: 'movieDetail', query: { movieId: movieInfo.id } })"
+      @click="$router.push({ name: 'movieDetail', query: { movieId: movieInfo.id + '' } })"
     >
       <div class="movie-img">
-        <img :src="movieInfo.img.replace('w.h', '128.180')" />
+        <img :src="$util.imgUrlReplace(movieInfo.img)" />
       </div>
       <div class="right-info">
         <ul class="movie-info">
@@ -91,7 +91,7 @@ export default class MovieList extends Vue {
 .movie-info .score > span {
   font-weight: bold;
   font-size: 14px;
-  color: #faaf00;
+  color: #ffb400;
 }
 .btn > button {
   width: 48px;

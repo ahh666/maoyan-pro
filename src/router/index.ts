@@ -1,7 +1,8 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
-
+import store from '@/store'
+import VueRouter, { Route } from 'vue-router'
 Vue.use(VueRouter)
+
 
 const routes = [
   {
@@ -45,4 +46,13 @@ const router = new VueRouter({
   routes
 })
 
+router.beforeEach((to: Route, from: Route, next: any): void => {
+  if (to.name && /^(home|mine|cinema)$/g.test(to.name)) {
+    store.commit('homeModule/setShowTabBar', true)
+    next()
+  } else {
+    store.commit('homeModule/setShowTabBar', false)
+    next()
+  }
+})
 export default router

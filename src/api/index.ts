@@ -16,9 +16,11 @@ class API extends BaseAPI {
   public getMoreList(params: { movieIds: string }) {
     return this.get('/moreComingList', { params })
   }
-  // http://m.maoyan.com/dianying/cities.json
   public getCities() {
     return this.get('/cities.json', { baseURL: '/dianying'})
+  }
+  public getCinemaList(params: CinemaList) {
+    return this.get('/cinemaList', { params })
   }
 }
 

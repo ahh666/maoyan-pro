@@ -14,3 +14,7 @@ interface CityList {
   tag: string,
   items: CityItems[]
 }
+interface CinemaList {
+  day: string,
+  cityId: number
+}

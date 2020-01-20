@@ -14,7 +14,7 @@
                 @click="$router.push({ name: 'movieDetail', query: { movieId: movie.id }})"
               >
                 <div class="hope-img">
-                  <img :src="movie.img.replace('w.h', '128.180')" />
+                  <img :src="$util.imgUrlReplace(movie.img)" />
                   <p class="wish">{{ movie.wish }}想看</p>
                 </div>
                 <div class="wish-info">
@@ -131,7 +131,7 @@ export default class Coming extends Vue {
           position: relative;
           font-weight: bold;
           font-size: 12px;
-          color: #faaf00;
+          color: #ffb400;
           margin: -40px 0px 6px 0px;
           padding: 20px 0px 0px 3px;
           background: linear-gradient(rgba(77, 77, 77, 0), #000);

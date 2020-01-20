@@ -12,7 +12,7 @@
           class="cities"
           v-for="item in city.items"
           :key="item.id"
-          @click="chooseCity(item.nm)"
+          @click="chooseCity(item.nm, item.id)"
         >
           {{ item.nm }}
         </div>
@@ -47,6 +47,7 @@ const homeModule = namespace('homeModule')
 })
 export default class Position extends Vue {
   @homeModule.Mutation('setPos') setPos: (pos: string) => void
+  @homeModule.Mutation('setPosId') setPosId: (posId: number) => void
   
   @Ref('cityList') refCityList!: any[]
   private scroller: BScroll
@@ -141,8 +142,9 @@ export default class Position extends Vue {
     })
   }
 
-  private chooseCity(pos: string) {
+  private chooseCity(pos: string, posId: number) {
     this.setPos(pos)
+    this.setPosId(posId)
     this.$router.back()
   }
 }

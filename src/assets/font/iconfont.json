@@ -13,6 +13,13 @@
       "unicode_decimal": 58909
     },
     {
+      "icon_id": "737787",
+      "name": "播放",
+      "font_class": "bofang",
+      "unicode": "e6fe",
+      "unicode_decimal": 59134
+    },
+    {
       "icon_id": "1055090",
       "name": "展开",
       "font_class": "webicon215",
@@ -25,6 +32,13 @@
       "font_class": "fanhuidingbu",
       "unicode": "e633",
       "unicode_decimal": 58931
+    },
+    {
+      "icon_id": "1830338",
+      "name": "播放",
+      "font_class": "bofang1",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
     },
     {
       "icon_id": "5301930",
@@ -67,6 +81,13 @@
       "font_class": "zhankai",
       "unicode": "e66e",
       "unicode_decimal": 58990
+    },
+    {
+      "icon_id": "10275799",
+      "name": "imax",
+      "font_class": "imax1",
+      "unicode": "e611",
+      "unicode_decimal": 58897
     }
   ]
 }

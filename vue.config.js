@@ -12,7 +12,7 @@ module.exports = {
         }
       },
       '/dianying': {
-        target: 'http://m.maoyan.com', // 请求的目标服务器接口
+        target: 'http://m.maoyan.com',
         changeOrigin: true, 
         pathRewrite: { 
           '^/dianying': '/dianying' 

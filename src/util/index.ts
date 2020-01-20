@@ -38,7 +38,12 @@ const cityListFormat = (list: CityItems[]): CityList[] => {
   return cityList
 }
 
+const imgUrlReplace = (img: string) => {
+  return img.replace('w.h', '128.180')
+}
+
 export default {
   arraySort,
-  cityListFormat
+  cityListFormat,
+  imgUrlReplace
 }
