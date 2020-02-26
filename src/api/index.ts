@@ -22,6 +22,9 @@ class API extends BaseAPI {
   public getCinemaList(params: CinemaList) {
     return this.get('/cinemaList', { params })
   }
+  public search(params: SearchParams) {
+    return this.get('/search', { params })
+  }
 }
 
 export default new API()

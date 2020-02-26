@@ -40,6 +40,10 @@ const routes = [
     name: 'register',
     component: () => import('../views/user/Register.vue')
   },
+  {
+    path: '/search',
+    component: () => import('../views/serach/index.vue')
+  }
 ]
 
 const router = new VueRouter({

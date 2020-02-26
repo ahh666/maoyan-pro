@@ -18,3 +18,8 @@ interface CinemaList {
   day: string,
   cityId: number
 }
+interface SearchParams {
+  kw: number | string,
+  cityId: number,
+  stype: number
+}

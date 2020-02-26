@@ -51,6 +51,7 @@ export default class MovieList extends Vue {
 <style lang="scss" scoped>
 .movie-list {
   width: 100%;
+  height: 108px;
   padding: 5px 12px;
 }
 .movie-img > img {
@@ -60,6 +61,7 @@ export default class MovieList extends Vue {
   margin-right: 8px;
 }
 .right-info {
+  height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
