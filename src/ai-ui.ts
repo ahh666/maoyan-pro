@@ -17,6 +17,7 @@ Vue.component('ai-list', List)
 Vue.component('ai-title-bar', TitleBar)
 Vue.component('ai-search-bar', SearchBar)
 
-import Toast from './components/common/Toast/index'
 
-Vue.prototype.$toast = Toast
+import Popup from './components/common/Popup/index'
+
+Vue.use(Popup)

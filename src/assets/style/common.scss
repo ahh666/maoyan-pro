@@ -1,3 +1,4 @@
+@import './index.scss';
 .pos-center {
   top: 50%;
   left: 50%;
@@ -9,4 +10,16 @@
 }
 .nowrap {
   white-space: nowrap;
+}
+.flex-row-center {
+  @include setFlexDisplay();
+}
+.flex-col-center {
+  @include setFlexDisplay(column);
+}
+.flex-row-between-center {
+  @include setFlexDisplay(row, space-between);
+}
+.flex-col-between-center {
+  @include setFlexDisplay(column, space-between);
 }

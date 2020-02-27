@@ -17,7 +17,7 @@ export default class Search extends Vue {
     this.$router.back()
   }
   private handleChange(kw: string) {
-    if (this.posId === undefined) return this.$toast({text: '请先获取定位' + this.count++});
+    if (this.posId === undefined) return this.$popup.toast({text: '请先获取定位'});
     let params = {
       kw,
       cityId: this.posId,

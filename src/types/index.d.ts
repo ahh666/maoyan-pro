@@ -1,10 +1,3 @@
-interface TabBarList {
-  /** nav图标 */
-  name: string,
-  text: string,
-  /** 要跳转的url */
-  to: string
-}
 interface CityItems {
   id: number,
   nm: string,
