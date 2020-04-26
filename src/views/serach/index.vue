@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import { namespace } from "vuex-class";
+import { namespace } from "vuex-class"
 const homeModule = namespace('homeModule')
 @Component({})
 export default class Search extends Vue {
@@ -17,7 +17,7 @@ export default class Search extends Vue {
     this.$router.back()
   }
   private handleChange(kw: string) {
-    if (this.posId === undefined) return this.$popup.toast({text: '请先获取定位'});
+    if (this.posId === undefined) return this.$toast({text: '请先获取定位' + this.count++});
     let params = {
       kw,
       cityId: this.posId,

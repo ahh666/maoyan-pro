@@ -1,11 +1,11 @@
 import Vue, { VueConstructor } from 'vue'
-import Popup from './Popup.vue'
+import Toast from './Dialog.vue'
 
-const PopupCtor = Vue.extend(Popup)
+const ToastCtor = Vue.extend(Toast)
 
-const InitPopup = (opt: PopupOptions): void => {
+const InitToast = (opt: DialogOptions): void => {
   const duration = opt.autoClose !== false && (opt.duration || 2000)
-  let i = new PopupCtor({
+  let i = new ToastCtor({
     data: opt
   }).$mount()
 
@@ -16,11 +16,11 @@ const InitPopup = (opt: PopupOptions): void => {
   }, duration)
 }
 
-const toast = (opt: PopupOptions) => {
-  return InitPopup(opt)
+const toast = (opt: DialogOptions) => {
+  return InitToast(opt)
 }
-const alert = (opt: PopupOptions) => {
-  return InitPopup({
+const alert = (opt: DialogOptions) => {
+  return InitToast({
     autoClose: false,
     ...opt
   })

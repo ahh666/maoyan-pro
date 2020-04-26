@@ -20,8 +20,8 @@ import { Component, Vue, Prop } from 'vue-property-decorator'
 import Icon from './Icon.vue'
 @Component({
   components: {
-    Icon
-  }
+    Icon,
+  },
 })
 export default class TabBar extends Vue {
   @Prop({ type: Array, required: true }) private tabBarList!: Array<TabBarList>

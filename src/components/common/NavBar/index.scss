@@ -1,0 +1,25 @@
+@import '@/assets/style/index.scss';
+$default-height: 50px;
+.nav {
+  width: 100%;
+  height: $default-height;
+  padding: 10px;
+  @include setFixed(top, 0, $default-height);
+  @include setFlexDisplay(row, space-between);
+  background: $theme;
+  color: #fff;
+  > div {
+    width: 30%;
+    white-space: nowrap;
+  }
+  > .nav-title {
+    text-align: center;
+  }
+  > .nav-right {
+    text-align: right;
+  }
+}
+.nav-bg {
+  width: 100%;
+  height: $default-height;
+}

@@ -1,0 +1,18 @@
+@import '@/assets/style/index.scss';
+
+.tab-bar {
+  background: #fff;
+  border-top: 1px solid #ededed;
+  @include setFixed(bottom, 0, 50px);
+  @include setFlexDisplay(row, space-around);
+  > .tab-bar-item {
+    font-size: 10px;
+    @include setFlexDisplay(column, space-around);
+    .icon {
+      font-size: 22px;
+    }
+  }
+  .active {
+    color: $theme;
+  }
+}

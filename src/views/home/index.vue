@@ -7,10 +7,10 @@
           <p>{{ position | posFormat }}</p>
           <ai-icon name="webicon215" />
         </div>
-        <div :class="[showHot === 1 ? 'active' : '']" @click="showHot = 1">
+        <div :class="[showHot === 1 && 'active']" @click="showHot = 1">
           正在热映
         </div>
-        <div :class="[showHot === 0 ? 'active' : '']" @click="showHot = 0">
+        <div :class="[showHot === 0 && 'active']" @click="showHot = 0">
           即将上映
         </div>
         <div>

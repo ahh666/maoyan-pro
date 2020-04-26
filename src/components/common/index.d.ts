@@ -5,7 +5,14 @@ interface TabBarList {
   /** 要跳转的url */
   to: string
 }
-interface PopupOptions {
+interface ToastOptions {
+  text?: string,
+  duration?: number,
+  icon?: string,
+  image?: string,
+  countdown?: number
+}
+interface DialogOptions {
   text?: string,
   duration?: number,
   showBtn?: boolean,

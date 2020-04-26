@@ -1,10 +1,10 @@
 <template>
   <div
     v-if="showPopup"
-    :class="['popup-box', showBtn && 'bg']"
+    :class="['popup-box', !autoClose && 'bg']"
     @click="clickBG"
   >
-    <div class="toast pos-center" v-if="!showBtn">
+    <div class="toast pos-center" v-if="autoClose">
       <p>{{ text }}</p>
     </div>
     <div
@@ -28,7 +28,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import Button from '../Button.vue'
+import Button from '../Button'
 @Component({
   components: { Button }
 })
@@ -45,12 +45,16 @@ export default class Popup extends Vue {
   private created() {
     this.closeToast()
   }
+  private closer() {
+    this.showPopup = false
+  }
   private closeToast() {
     this.autoClose && setTimeout(() => {
-        this.showPopup = false
+        this.closer()
       }, this.duration)
   }
   private clickBG() {
+    if (this.autoClose) return;
     this.showPopup = false
   }
   private cancelClick() {

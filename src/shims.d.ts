@@ -6,7 +6,8 @@ declare module 'vue/types/vue' {
   interface Vue {
     $api: typeof API;
     $util: typeof Util;
-    $popup: typeof Vue.prototype.$popup;
+    $toast: typeof Vue.prototype.$toast;
+    // $dialog: typeof Vue.prototype.$dialog;
   }
 }
 

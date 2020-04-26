@@ -1,13 +1,14 @@
 import Vue from 'vue'
 import './assets/font/index.css'
 
-import Icon from './components/common/Icon.vue'
-import NavBar from './components/common/NavBar.vue'
-import Loading from './components/common/Loading.vue'
-import TabBar from './components/common/TabBar.vue'
-import List from './components/common/List.vue'
-import TitleBar from './components/common/TitleBar.vue'
-import SearchBar from './components/common/SearchBar.vue'
+import Icon from './components/common/Icon'
+import NavBar from './components/common/NavBar'
+import Loading from './components/common/Loading'
+import TabBar from './components/common/TabBar'
+import List from './components/common/List'
+// import List from './components/old/List.vue'
+import TitleBar from './components/common/TitleBar'
+import SearchBar from './components/common/SearchBar'
 
 Vue.component('ai-icon', Icon)
 Vue.component('ai-navbar', NavBar)
@@ -18,6 +19,6 @@ Vue.component('ai-title-bar', TitleBar)
 Vue.component('ai-search-bar', SearchBar)
 
 
-import Popup from './components/common/Popup/index'
+import Toast from './components/common/Toast/index'
 
-Vue.use(Popup)
+Vue.use(Toast)

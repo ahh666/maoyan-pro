@@ -1,0 +1,15 @@
+@import '@/assets/style/index.scss';
+.title-bar {
+  @include setFlexDisplay(row, space-between);
+  > .left-title {
+    font-size: 15px;
+  }
+  > .right-bar {
+    font-size: 13px;
+    color: #aaa;
+    @include setFlexDisplay(row, space-between);
+    > .more {
+      display: inline-block;
+    }
+  }
+}
