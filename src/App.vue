@@ -19,7 +19,7 @@ export default class App extends Vue {
     {
       name: 'dianying',
       text: '首页',
-      to: '/mall'
+      to: '/home'
     },
     {
       name: 'yingyuana',

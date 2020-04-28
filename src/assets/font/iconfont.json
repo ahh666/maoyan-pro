@@ -6,11 +6,11 @@
   "description": "",
   "glyphs": [
     {
-      "icon_id": "156388",
-      "name": "影院A",
-      "font_class": "yingyuana",
-      "unicode": "e61d",
-      "unicode_decimal": 58909
+      "icon_id": "881778",
+      "name": "选中",
+      "font_class": "xuanzhong",
+      "unicode": "e6e7",
+      "unicode_decimal": 59111
     },
     {
       "icon_id": "737787",
@@ -20,20 +20,6 @@
       "unicode_decimal": 59134
     },
     {
-      "icon_id": "1055090",
-      "name": "展开",
-      "font_class": "webicon215",
-      "unicode": "e68d",
-      "unicode_decimal": 59021
-    },
-    {
-      "icon_id": "1440886",
-      "name": "返回顶部 ",
-      "font_class": "fanhuidingbu",
-      "unicode": "e633",
-      "unicode_decimal": 58931
-    },
-    {
       "icon_id": "1830338",
       "name": "播放",
       "font_class": "bofang1",
@@ -41,32 +27,25 @@
       "unicode_decimal": 58910
     },
     {
+      "icon_id": "10275799",
+      "name": "imax",
+      "font_class": "imax1",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "1055090",
+      "name": "展开",
+      "font_class": "webicon215",
+      "unicode": "e68d",
+      "unicode_decimal": 59021
+    },
+    {
       "icon_id": "5301930",
       "name": "搜索",
       "font_class": "sousuo",
       "unicode": "e62e",
       "unicode_decimal": 58926
-    },
-    {
-      "icon_id": "5532882",
-      "name": "返回",
-      "font_class": "fanhui",
-      "unicode": "e623",
-      "unicode_decimal": 58915
-    },
-    {
-      "icon_id": "5964571",
-      "name": "我的",
-      "font_class": "wode",
-      "unicode": "e615",
-      "unicode_decimal": 58901
-    },
-    {
-      "icon_id": "7629041",
-      "name": "电影",
-      "font_class": "dianying",
-      "unicode": "e6af",
-      "unicode_decimal": 59055
     },
     {
       "icon_id": "8199580",
@@ -83,11 +62,39 @@
       "unicode_decimal": 58990
     },
     {
-      "icon_id": "10275799",
-      "name": "imax",
-      "font_class": "imax1",
-      "unicode": "e611",
-      "unicode_decimal": 58897
+      "icon_id": "156388",
+      "name": "影院A",
+      "font_class": "yingyuana",
+      "unicode": "e61d",
+      "unicode_decimal": 58909
+    },
+    {
+      "icon_id": "5964571",
+      "name": "我的",
+      "font_class": "wode",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "7629041",
+      "name": "电影",
+      "font_class": "dianying",
+      "unicode": "e6af",
+      "unicode_decimal": 59055
+    },
+    {
+      "icon_id": "5532882",
+      "name": "返回",
+      "font_class": "fanhui",
+      "unicode": "e623",
+      "unicode_decimal": 58915
+    },
+    {
+      "icon_id": "1440886",
+      "name": "返回顶部 ",
+      "font_class": "fanhuidingbu",
+      "unicode": "e633",
+      "unicode_decimal": 58931
     }
   ]
 }

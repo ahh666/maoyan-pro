@@ -25,6 +25,9 @@ class API extends BaseAPI {
   public search(params: SearchParams) {
     return this.get('/search', { params })
   }
+  public filterCinemas() {
+    return this.get('/filterCinemas')
+  }
 }
 
 export default new API()

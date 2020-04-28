@@ -23,3 +23,15 @@
 .flex-col-between-center {
   @include setFlexDisplay(column, space-between);
 }
+.ellipsis-line-1 {
+  @include setEllipsis();
+}
+.flex {
+  flex: 1;
+}
+.fixed-box {
+  @include setFixed()
+}
+.theme-color {
+  color: $theme;
+}

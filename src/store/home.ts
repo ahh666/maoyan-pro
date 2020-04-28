@@ -3,12 +3,12 @@ const homeModule = {
   state: {
     position: '定位',
     posId: undefined,
-    showTabBar: true
+    showTabBar: true,
   },
   getters: {
     getPos: (state: HomeState) => state.position,
     getPosId: (state: HomeState) => state.posId,
-    showTabBar: (state: HomeState) => state.showTabBar
+    showTabBar: (state: HomeState) => state.showTabBar,
   },
   mutations: {
     setPos: (state: HomeState, payload: string) => {
@@ -20,7 +20,7 @@ const homeModule = {
     setPosId: (state: HomeState, payload: number) => {
       state.posId = payload
     },
-  }
+  },
 }
 
 export default homeModule

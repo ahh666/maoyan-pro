@@ -69,7 +69,7 @@ export default class Movie extends Vue {
         width: 60px;
         white-space: nowrap;
         font-size: 12px;
-        @include setFlexDisplay(row, space-around);
+        @include setFlexDisplay();
         > p {
           color: #333;
           font-size: 16px;
