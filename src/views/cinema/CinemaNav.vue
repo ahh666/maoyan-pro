@@ -17,18 +17,24 @@
     <CinemaMask @closeMask="closeMask" v-if="showMask" />
     <CinemaNavCity v-if="showCityNav" />
     <CinemaNavBrand v-if="showBrandNav" :brandList="brandList" @checkedBrand="checkedMenu" />
-    <CinemaNavSpecial v-if="showSpecialNav" />
+    <CinemaNavSpecial
+      v-if="showSpecialNav"
+      :specialHallType="specialHallType"
+      :specialService="specialService"
+      @checkedSpecial="checkedMenu"
+    />
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
+import { Component, Vue, Watch } from 'vue-property-decorator'
 import CinemaNavCity from './CinemaNavCity.vue'
 import CinemaMask from './CinemaMask.vue'
 import CinemaNavBrand from './CinemaNavBrand.vue'
 import CinemaNavSpecial from './CinemaNavSpecial.vue'
 import { namespace } from 'vuex-class'
 const cinemaModule = namespace('cinemaModule')
+const homeModule = namespace('homeModule')
 
 @Component({
   components: { CinemaNavCity, CinemaMask, CinemaNavBrand, CinemaNavSpecial },
@@ -37,10 +43,14 @@ export default class CinemaNav extends Vue {
   @cinemaModule.Getter('getCity') private cityTab: string
   @cinemaModule.Getter('getBrand') private brandTab: string
   @cinemaModule.Getter('getSpecial') private specialTab: string
+  @homeModule.Getter('getPosId') private posId: number | undefined
+
   private showCityNav: boolean = false
   private showBrandNav: boolean = false
   private showSpecialNav: boolean = false
   private brandList: object[] = []
+  private specialHallType: object[] = []
+  private specialService: object[] = []
 
   private get showMask() {
     return this.showCityNav || this.showBrandNav || this.showSpecialNav
@@ -67,11 +77,17 @@ export default class CinemaNav extends Vue {
   }
 
   private filterCinemas() {
-    this.$api.filterCinemas().then((res) => {
-      console.log(res)
-      const { brand } = res
-      this.brandList = brand.subItems
-    })
+    if (this.posId === void 0) return
+    this.$api
+      .filterCinemas({
+        ci: this.posId,
+      })
+      .then((res) => {
+        const { brand, hallType, service } = res
+        this.brandList = brand.subItems
+        this.specialHallType = hallType
+        this.specialService = service
+      })
   }
   private checkedMenu() {
     this.closeMask()

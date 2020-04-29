@@ -7,7 +7,7 @@ export default class Button extends Vue {
   @Prop({ type: String, default: '确认' }) private text?: string
 
   private handleClick() {
-    this.$emit('btnClick')
+    this.$emit('click')
   }
 
   protected render() {

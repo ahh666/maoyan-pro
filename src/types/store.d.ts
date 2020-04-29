@@ -16,8 +16,9 @@ interface UserLoginInfo {
 
 interface HomeState {
   position: string
-  showTabBar: boolean
   posId: number | undefined
+  showTabBar: boolean
+  posIdChanged: boolean
 }
 interface CinemaState {
   city: string
@@ -26,4 +27,6 @@ interface CinemaState {
   brandId: number | undefined
   special: string
   specialId: number | undefined
+  serviceId: number | undefined
+  hallType: number | undefined
 }

@@ -17,7 +17,7 @@ class API extends BaseAPI {
     return this.get('/moreComingList', { params })
   }
   public getCities() {
-    return this.get('/cities.json', { baseURL: '/dianying'})
+    return this.get('/cities.json', { baseURL: '/dianying' })
   }
   public getCinemaList(params: CinemaList) {
     return this.get('/cinemaList', { params })
@@ -25,8 +25,8 @@ class API extends BaseAPI {
   public search(params: SearchParams) {
     return this.get('/search', { params })
   }
-  public filterCinemas() {
-    return this.get('/filterCinemas')
+  public filterCinemas(params: { ci: string | number }) {
+    return this.get('/filterCinemas', { params })
   }
 }
 

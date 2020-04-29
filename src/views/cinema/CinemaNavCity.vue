@@ -17,6 +17,6 @@ export default class CinemaNavCity extends Vue {}
   height: 50vh;
   background: #fff;
   position: relative;
-  z-index: 19;
+  z-index: 109;
 }
 </style>

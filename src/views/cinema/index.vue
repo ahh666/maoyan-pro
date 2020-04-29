@@ -38,26 +38,48 @@ const cinemaModule = namespace('cinemaModule')
 export default class Cinema extends Vue {
   @homeModule.Getter('getPos') private position: string
   @homeModule.Getter('getPosId') private posId: number | undefined
+  @homeModule.Getter('posIdChanged') private posIdChanged: number | undefined
+  @cinemaModule.Getter('getCityId') private cityId: number
   @cinemaModule.Getter('getBrandId') private brandId: number
+  @cinemaModule.Getter('getServiceId') private serviceId: number
+  @cinemaModule.Getter('getHallType') private hallType: number
+  @cinemaModule.Mutation('setCityId') private setCityId: (id: number) => void
+  @cinemaModule.Mutation('setBrandId') private setBrandId: (id: number) => void
+  @cinemaModule.Mutation('setSpecialId') private setSpecialId: (id: number) => void
+  
 
   private cinemaList: object[] = []
 
+  @Watch('cityId')
   @Watch('brandId')
+  @Watch('hallType')
   private reloadCinemaList() {
     this.getCinemaList()
   }
 
   private created() {
+    this.posIdChanged && this.initCinemas()
     this.getCinemaList()
   }
+
+  private initCinemas() {
+    this.setCityId(-1)
+    this.setBrandId(-1)
+    this.setSpecialId(-1)
+  }
   private getCinemaList() {
+    if (this.posId === void 0) {
+      this.$toast('请先选择定位')
+      return this.$router.push('/position')
+    }
     const params = {
       day: new Date().toLocaleDateString().replace(/\//g, '-'),
-      cityId: this.posId || 1,
+      cityId: this.posId,
       brandId: this.brandId,
+      serviceId: this.serviceId,
+      hallType: this.hallType,
     }
     this.$api.getCinemaList(params).then((res) => {
-      console.log(res)
       const { cinemas } = res
       this.cinemaList = cinemas
     })

@@ -16,3 +16,7 @@ interface SearchParams {
   cityId: number,
   stype: number
 }
+interface CinemaNavMenuItem {
+  name: string,
+  subItems: object[]
+}

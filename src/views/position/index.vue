@@ -1,12 +1,7 @@
 <template>
   <div class="position-box">
     <div>
-      <div
-        class="city-list"
-        ref="cityList"
-        v-for="city in cityList"
-        :key="city.tag"
-      >
+      <div class="city-list" ref="cityList" v-for="city in cityList" :key="city.tag">
         <div class="tag">{{ city.tag | toUpper }}</div>
         <div
           class="cities"
@@ -42,13 +37,15 @@ const homeModule = namespace('homeModule')
   filters: {
     toUpper: (letter: string) => {
       return letter.toUpperCase()
-    }
-  }
+    },
+  },
 })
 export default class Position extends Vue {
+  @homeModule.Getter('getPosId') private posId: number | undefined
   @homeModule.Mutation('setPos') setPos: (pos: string) => void
   @homeModule.Mutation('setPosId') setPosId: (posId: number) => void
-  
+  @homeModule.Mutation('setPosIdChanged') setPosIdChanged: (changed: boolean) => void
+
   @Ref('cityList') refCityList!: any[]
   private scroller: BScroll
   private cityList: CityList[] = []
@@ -83,22 +80,22 @@ export default class Position extends Vue {
   private mounted() {
     this.scroller = new BScroll('.position-box', {
       probeType: 3,
-      click: true
+      click: true,
     })
-    this.scroller.on('scroll', pos => {
+    this.scroller.on('scroll', (pos) => {
       this.contScrollY = pos.y
     })
   }
 
   private get quickNavTag() {
-    return this.cityList.map(a => {
+    return this.cityList.map((a) => {
       return a.tag
     })
   }
 
   private async getCities() {
     let cityList: any = null
-    await this.$api.getCities().then(res => {
+    await this.$api.getCities().then((res) => {
       cityList = this.$util.arraySort(res.cts)
       localStorage.setItem('cityList', JSON.stringify(cityList))
     })
@@ -130,21 +127,24 @@ export default class Position extends Vue {
   }
   // 索引移动导航
   private handleMoveNav(e: any) {
-    const index = Math.round(
-      (e.touches[0].pageY - this.navStartScrollY) / 16 + this.startTagIndex
-    )
+    const index = Math.round((e.touches[0].pageY - this.navStartScrollY) / 16 + this.startTagIndex)
     this.jumpTo(index)
   }
   // 计算每一块索引内容高度（兼容索引高亮）
   private calcContentHeight() {
-    this.contHeightList = this.refCityList.map(item => {
+    this.contHeightList = this.refCityList.map((item) => {
       return item.clientHeight
     })
   }
 
   private chooseCity(pos: string, posId: number) {
-    this.setPos(pos)
-    this.setPosId(posId)
+    if (this.posId !== posId) {
+      this.setPos(pos)
+      this.setPosId(posId)
+      this.setPosIdChanged(true)
+    } else {
+      this.setPosIdChanged(false)
+    }
     this.$router.back()
   }
 }

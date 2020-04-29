@@ -20,7 +20,7 @@
           <div class="vip-tag" v-if="item.tag.vipTag">{{ item.tag.vipTag }}</div>
           <div class="hall-type" v-for="hall in item.tag.hallType" :key="hall">{{ hall }}</div>
         </div>
-        <div class="card-tag">
+        <div class="card-tag" v-if="item.promotion.cardPromotionTag">
           <img :src="cardImg" width="15" height="14" />
           {{ item.promotion.cardPromotionTag }}
         </div>
@@ -65,19 +65,19 @@ export default class CinemaNav extends Vue {
   }
   .tag-list {
     display: flex;
-    font-size: 12px;
+    font-size: 10px;
     > div {
       border: 1px solid #589daf;
       border-radius: 4px;
-      padding: 0 5px;
+      padding: 0 4px;
       ~ div {
-        margin-left: 5px;
+        margin-left: 3px;
       }
     }
     > .snack,
     .vip-tag {
       color: #ff9900;
-      border-block-color: #ff9900;
+      border-color: #ff9900;
     }
   }
   > .card-tag {

@@ -2,10 +2,15 @@ import Vue, { VueConstructor } from 'vue'
 import VueToast from './Toast.vue'
 
 let queue: any[] = []
-const createInstance = (opt: ToastOptions) => {
+const createInstance = (opt: ToastOptions | string) => {
+  if (typeof opt === 'string') {
+    opt = {
+      text: opt,
+    }
+  }
   const toast = new (Vue.extend(VueToast))({
     el: document.createElement('div'),
-    data: opt
+    data: opt,
   })
   queue.push(toast.$el)
   return toast.$el
