@@ -83,7 +83,7 @@ export default class CinemaNav extends Vue {
 @import '@/assets/style/index.scss';
 .cinema-nav {
   position: relative;
-  z-index: 12;
+  z-index: 102;
   width: 100%;
   background: #fff;
   border-bottom: 1px solid #ccc;

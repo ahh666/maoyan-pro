@@ -46,7 +46,7 @@ export default class CinemaNavBrand extends Vue {
   height: 50vh;
   background: #fff;
   position: relative;
-  z-index: 19;
+  z-index: 109;
   overflow: hidden;
   .brand-item {
     height: 50px;

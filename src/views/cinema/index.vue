@@ -71,7 +71,7 @@ export default class Cinema extends Vue {
   top: 50px;
   width: 100%;
   position: fixed;
-  z-index: 9;
+  z-index: 100;
   > .top-search,
   .top-nav {
     height: 50px;

@@ -23,7 +23,7 @@ $fontfmMd: PingFangSC-Medium, PingFangSC;
   position: fixed;
   left: 0;
   right: 0;
-  z-index: 9;
+  z-index: 99;
   @if $pos == top {
     top: $offset;
     @if $height == 0 {
