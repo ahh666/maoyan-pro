@@ -9,8 +9,10 @@ const cinemaModule = {
     specialId: -1,
     hallType: -1,
     serviceId: -1,
+    districtId: -1,
     areaId: -1,
     stationId: -1,
+    cityNavItemIndex: 0,
   },
   getters: {
     getCity: (state: CinemaState) => state.city,
@@ -21,6 +23,9 @@ const cinemaModule = {
     getSpecialId: (state: CinemaState) => state.specialId,
     getServiceId: (state: CinemaState) => state.serviceId,
     getHallType: (state: CinemaState) => state.hallType,
+    getDistrictId: (state: CinemaState) => state.districtId,
+    getAreaId: (state: CinemaState) => state.areaId,
+    getCityNavItemIndex: (state: CinemaState) => state.cityNavItemIndex,
   },
   mutations: {
     setCity: (state: CinemaState, payload: string) => (state.city = payload),
@@ -46,6 +51,9 @@ const cinemaModule = {
     },
     setServiceId: (state: CinemaState, payload: number) => (state.serviceId = payload),
     setHallType: (state: CinemaState, payload: number) => (state.hallType = payload),
+    setDistrictId: (state: CinemaState, payload: number) => (state.districtId = payload),
+    setAreaId: (state: CinemaState, payload: number) => (state.areaId = payload),
+    setCityNavItemIndex: (state: CinemaState, payload: number) => (state.cityNavItemIndex = payload),
   },
 }
 

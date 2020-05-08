@@ -12,7 +12,7 @@
         </div>
       </div>
       <div class="top-nav">
-        <CinemaNav />
+        <CinemaNav ref="cinemaNav" />
       </div>
     </div>
     <CinemaList :cinemaList="cinemaList" />
@@ -22,7 +22,7 @@
 <script lang="ts">
 import CinemaList from './CinemaList.vue'
 import CinemaNav from './CinemaNav.vue'
-import { Component, Vue, Watch } from 'vue-property-decorator'
+import { Component, Vue, Watch, Ref } from 'vue-property-decorator'
 import { namespace } from 'vuex-class'
 const homeModule = namespace('homeModule')
 const cinemaModule = namespace('cinemaModule')
@@ -39,22 +39,31 @@ export default class Cinema extends Vue {
   @homeModule.Getter('getPos') private position: string
   @homeModule.Getter('getPosId') private posId: number | undefined
   @homeModule.Getter('posIdChanged') private posIdChanged: number | undefined
+  @homeModule.Mutation('setPosIdChanged') setPosIdChanged: (changed: boolean) => void
   @cinemaModule.Getter('getCityId') private cityId: number
   @cinemaModule.Getter('getBrandId') private brandId: number
   @cinemaModule.Getter('getServiceId') private serviceId: number
   @cinemaModule.Getter('getHallType') private hallType: number
+  @cinemaModule.Getter('getDistrictId') private districtId: number
+  @cinemaModule.Getter('getAreaId') private areaId: number
   @cinemaModule.Mutation('setCityId') private setCityId: (id: number) => void
   @cinemaModule.Mutation('setBrandId') private setBrandId: (id: number) => void
   @cinemaModule.Mutation('setSpecialId') private setSpecialId: (id: number) => void
-  
+  @cinemaModule.Mutation('setHallType') private setHallType: (id: number) => void
+  @cinemaModule.Mutation('setDistrictId') private setDistrictId: (id: number) => void
+  @cinemaModule.Mutation('setAreaId') private setAreaId: (id: number) => void
+  @Ref('cinemaNav') private cinemaNav: CinemaNav
 
   private cinemaList: object[] = []
 
   @Watch('cityId')
   @Watch('brandId')
   @Watch('hallType')
+  @Watch('districtId')
+  @Watch('areaId')
   private reloadCinemaList() {
     this.getCinemaList()
+    this.cinemaNav.closeMask()
   }
 
   private created() {
@@ -66,6 +75,10 @@ export default class Cinema extends Vue {
     this.setCityId(-1)
     this.setBrandId(-1)
     this.setSpecialId(-1)
+    this.setHallType(-1)
+    this.setDistrictId(-1)
+    this.setAreaId(-1)
+    this.setPosIdChanged(false)
   }
   private getCinemaList() {
     if (this.posId === void 0) {

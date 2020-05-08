@@ -22,11 +22,14 @@ interface HomeState {
 }
 interface CinemaState {
   city: string
-  cityId: number | undefined
+  cityId: number
   brand: string
-  brandId: number | undefined
+  brandId: number
   special: string
-  specialId: number | undefined
-  serviceId: number | undefined
-  hallType: number | undefined
+  specialId: number
+  serviceId: number
+  hallType: number
+  districtId: number
+  areaId: number
+  cityNavItemIndex: number
 }

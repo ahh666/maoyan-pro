@@ -15,7 +15,12 @@
       </div>
     </div>
     <CinemaMask @closeMask="closeMask" v-if="showMask" />
-    <CinemaNavCity v-if="showCityNav" />
+    <CinemaNavCity
+      v-if="showCityNav"
+      :cityDistrict="cityDistrict"
+      :citySubway="citySubway"
+      @checkedCity="checkedMenu"
+    />
     <CinemaNavBrand v-if="showBrandNav" :brandList="brandList" @checkedBrand="checkedMenu" />
     <CinemaNavSpecial
       v-if="showSpecialNav"
@@ -51,6 +56,8 @@ export default class CinemaNav extends Vue {
   private brandList: object[] = []
   private specialHallType: object[] = []
   private specialService: object[] = []
+  private cityDistrict: object[] = []
+  private citySubway: object[] = []
 
   private get showMask() {
     return this.showCityNav || this.showBrandNav || this.showSpecialNav
@@ -70,7 +77,7 @@ export default class CinemaNav extends Vue {
       this[maskNameList[type]] = false
     }
   }
-  private closeMask() {
+  public closeMask() {
     this.showCityNav = false
     this.showBrandNav = false
     this.showSpecialNav = false
@@ -83,14 +90,16 @@ export default class CinemaNav extends Vue {
         ci: this.posId,
       })
       .then((res) => {
-        const { brand, hallType, service } = res
+        const { brand, hallType, service, district, subway } = res
         this.brandList = brand.subItems
         this.specialHallType = hallType
         this.specialService = service
+        this.cityDistrict = district
+        this.citySubway = subway
       })
   }
   private checkedMenu() {
-    this.closeMask()
+    // this.closeMask()
   }
 }
 </script>

@@ -78,7 +78,7 @@ export default class CinemaNavSpecial extends Vue {
 
   private reset() {
     this.setServiceId(-1)
-    this.setHallType(-1)
+    this.hallType = -1
   }
   private confirm() {
     if (this.storeHallType !== this.hallType) {
