@@ -34,12 +34,14 @@ export default class SideNav extends Vue {
       this.setDistrictId(-1)
     }
   }
-  private clickListItem(id: number) {
+  private clickListItem(id: number, name: string) {
     this.listItemId = id
     this.setAreaId(id)
     this.setDistrictId(this.navItemId)
     if (id === -1) {
       this.setCity(this.navItemName)
+    } else {
+      this.setCity(name)
     }
   }
 
@@ -61,14 +63,14 @@ export default class SideNav extends Vue {
             )
           })}
         </div>
-        <List class="content-list">
+        <List {...{ class: 'content-list' }}>
           {_sideNavs[this.cityNavItemIndex].subItems.map((item) => {
             const _id = item.id
             return (
               <div
                 class={['content-list-item', _id === this.listItemId && 'active-content-item']}
                 key={item.id}
-                onClick={this.clickListItem.bind(this, item.id)}
+                onClick={this.clickListItem.bind(this, item.id, item.name)}
               >
                 <div class="icon">
                   <Icon v-show={_id === this.listItemId} name="xuanzhong" />

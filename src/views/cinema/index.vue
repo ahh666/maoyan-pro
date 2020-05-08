@@ -67,6 +67,7 @@ export default class Cinema extends Vue {
   }
 
   private created() {
+    alert(this.posIdChanged)
     this.posIdChanged && this.initCinemas()
     this.getCinemaList()
   }
@@ -91,6 +92,8 @@ export default class Cinema extends Vue {
       brandId: this.brandId,
       serviceId: this.serviceId,
       hallType: this.hallType,
+      areaId: this.areaId,
+      districtId: this.districtId,
     }
     this.$api.getCinemaList(params).then((res) => {
       const { cinemas } = res
