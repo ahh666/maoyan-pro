@@ -15,7 +15,7 @@
         <CinemaNav ref="cinemaNav" />
       </div>
     </div>
-    <CinemaList :cinemaList="cinemaList" />
+    <CinemaList :cinemaList="cinemaList" @loadMore="loadMore" :disabledLoad="disabledLoad" />
   </div>
 </template>
 
@@ -55,6 +55,8 @@ export default class Cinema extends Vue {
   @Ref('cinemaNav') private cinemaNav: CinemaNav
 
   private cinemaList: object[] = []
+  private currentPage: number = 0
+  private disabledLoad: boolean = false
 
   @Watch('cityId')
   @Watch('brandId')
@@ -62,12 +64,14 @@ export default class Cinema extends Vue {
   @Watch('districtId')
   @Watch('areaId')
   private reloadCinemaList() {
+    this.disabledLoad = false
+    this.cinemaList = []
+    this.currentPage = 0
     this.getCinemaList()
     this.cinemaNav.closeMask()
   }
 
   private created() {
-    alert(this.posIdChanged)
     this.posIdChanged && this.initCinemas()
     this.getCinemaList()
   }
@@ -87,6 +91,7 @@ export default class Cinema extends Vue {
       return this.$router.push('/position')
     }
     const params = {
+      offset: 20 * this.currentPage,
       day: new Date().toLocaleDateString().replace(/\//g, '-'),
       cityId: this.posId,
       brandId: this.brandId,
@@ -97,8 +102,13 @@ export default class Cinema extends Vue {
     }
     this.$api.getCinemaList(params).then((res) => {
       const { cinemas } = res
-      this.cinemaList = cinemas
+      if (cinemas.length === 0) this.disabledLoad = true
+      else this.cinemaList = this.cinemaList.concat(cinemas)
     })
+  }
+  private loadMore() {
+    this.currentPage++
+    this.getCinemaList()
   }
 }
 </script>
