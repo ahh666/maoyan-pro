@@ -15,7 +15,8 @@
         <CinemaNav ref="cinemaNav" />
       </div>
     </div>
-    <CinemaList :cinemaList="cinemaList" @loadMore="loadMore" :disabledLoad="disabledLoad" />
+    <ai-default-page v-if="showDefaultPage" />
+    <CinemaList v-else :cinemaList="cinemaList" @loadMore="loadMore" :disabledLoad="disabledLoad" />
   </div>
 </template>
 
@@ -57,6 +58,7 @@ export default class Cinema extends Vue {
   private cinemaList: object[] = []
   private currentPage: number = 0
   private disabledLoad: boolean = false
+  private showDefaultPage: boolean = false
 
   @Watch('cityId')
   @Watch('brandId')
@@ -102,8 +104,13 @@ export default class Cinema extends Vue {
     }
     this.$api.getCinemaList(params).then((res) => {
       const { cinemas } = res
-      if (cinemas.length === 0) this.disabledLoad = true
-      else this.cinemaList = this.cinemaList.concat(cinemas)
+      if (cinemas.length === 0) {
+        if (this.currentPage === 0) {
+          this.showDefaultPage = true
+        } else {
+          this.disabledLoad = true
+        }
+      } else this.cinemaList = this.cinemaList.concat(cinemas)
     })
   }
   private loadMore() {

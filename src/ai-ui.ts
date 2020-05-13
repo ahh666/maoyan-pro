@@ -9,6 +9,7 @@ import List from './components/common/List'
 import TitleBar from './components/common/TitleBar'
 import SearchBar from './components/common/SearchBar'
 import Button from './components/common/Button'
+import DefaultPage from './components/common/DefaultPage'
 
 Vue.component('ai-icon', Icon)
 Vue.component('ai-navbar', NavBar)
@@ -18,6 +19,7 @@ Vue.component('ai-list', List)
 Vue.component('ai-title-bar', TitleBar)
 Vue.component('ai-search-bar', SearchBar)
 Vue.component('ai-button', Button)
+Vue.component('ai-default-page', DefaultPage)
 
 
 import Toast from './components/common/Toast/index'

@@ -1,0 +1,16 @@
+.default-page {
+  position: relative;
+  width: 100%;
+  min-height: 100px;
+  z-index: 123;
+  > .content {
+    position: absolute;
+    top: 140px;
+    width: 140px;
+    height: 140px;
+    text-align: center;
+    > img {
+      width: 100px;
+    }
+  }
+}

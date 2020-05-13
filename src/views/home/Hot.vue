@@ -1,5 +1,6 @@
 <template>
-  <ai-list class="hoting-box" @loadMore="loadMore" :finished="disabledLoad">
+  <ai-default-page v-if="showDefaultPage" />
+  <ai-list v-else class="hoting-box" @loadMore="loadMore" :finished="disabledLoad">
     <div class="hoting">
       <MovieList v-for="movie in hotList" :key="movie.id" :movieInfo="movie" />
     </div>
@@ -12,34 +13,42 @@ import MovieList from '@/components/MovieList.vue'
 
 @Component({
   components: {
-    MovieList
-  }
+    MovieList,
+  },
 })
 export default class Hot extends Vue {
   private hotList: [] | never[] = []
   private moreHotIds: [] = []
   private currentPage: number = 1
   private disabledLoad: boolean = false
+  private showDefaultPage: boolean = false
 
   private created() {
     this.getMovieOnInfoList()
   }
 
   private loadMore() {
-    const movieIds = this.moreHotIds.slice(this.currentPage * 10, this.currentPage * 10 + 10).join(',')
-    this.$api.getMoreList({ movieIds }).then(res => {
+    const movieIds = this.moreHotIds
+      .slice(this.currentPage * 10, this.currentPage * 10 + 10)
+      .join(',')
+    this.$api.getMoreList({ movieIds }).then((res) => {
       if (res.coming.length === 0) {
-        return this.disabledLoad = true
+        return (this.disabledLoad = true)
       }
       this.hotList = this.hotList.concat(res.coming)
-      this.currentPage ++
+      this.currentPage++
     })
   }
 
   private getMovieOnInfoList() {
-    this.$api.getMovieOnInfoList().then(res => {
-      this.hotList = res.movieList.splice(0, 10)
-      this.moreHotIds = res.movieIds
+    this.$api.getMovieOnInfoList().then((res) => {
+      if (res.movieList.length) {
+
+        this.hotList = res.movieList.splice(0, 10)
+        this.moreHotIds = res.movieIds
+      } else {
+        this.showDefaultPage = true
+      }
     })
   }
 }
