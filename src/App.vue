@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view />
-    <ai-tabbar :tabBarList="tabBarList" v-show="showTabBar"/>
+    <ai-tab-bar :tabBarList="tabBarList" v-show="showTabBar"/>
   </div>
 </template>
 

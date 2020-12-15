@@ -1,7 +1,7 @@
 import { Component, Vue, Prop } from 'vue-property-decorator'
 
 @Component
-export default class Icon extends Vue {
+export default class AiIcon extends Vue {
   @Prop(String) private name!: string
 
   private get iconTag(): string {

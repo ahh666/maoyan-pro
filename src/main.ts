@@ -4,8 +4,9 @@ import router from './router'
 import store from './store'
 import API from './api'
 import Util from './util'
-import './ai-ui'
 import './assets/style/common.scss'
+import './assets/font/index.css'
+import './components/common/index'
 
 Vue.prototype.$api = API
 Vue.prototype.$util = Util

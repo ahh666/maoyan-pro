@@ -2,7 +2,7 @@ import { Component, Vue, Prop } from 'vue-property-decorator'
 import './index.scss'
 
 @Component
-export default class Button extends Vue {
+export default class AiButton extends Vue {
   @Prop({ type: String, default: '' }) private type?: string
   @Prop({ type: String, default: '确认' }) private text?: string
 

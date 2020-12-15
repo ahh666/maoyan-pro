@@ -3,7 +3,7 @@ import Icon from '../Icon'
 import './index.scss'
 
 @Component
-export default class TabBar extends Vue {
+export default class AiTabBar extends Vue {
   @Prop({ type: Array, required: true }) private tabBarList!: Array<TabBarList>
   @Prop({ type: String, default: '#e54847' }) private activeBarColor?: string
 

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ai-navbar title="猫眼电影" />
+    <ai-nav-bar title="猫眼电影" />
     <ai-search-bar placeholder="搜影院" @btnClick="handleClick" @inputChange="handleChange" />
   </div>
 </template>

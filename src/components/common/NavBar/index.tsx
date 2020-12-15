@@ -3,7 +3,7 @@ import './index.scss'
 import Icon from '../Icon'
 
 @Component
-export default class NavBar extends Vue {
+export default class AiNavBar extends Vue {
   @Prop(String) private title!: string
   @Prop({ type: Boolean, default: true }) private showBack?: boolean
   @Prop({ type: Boolean, default: false }) private showRight?: boolean

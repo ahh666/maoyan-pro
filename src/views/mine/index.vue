@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ai-navbar title="猫眼电影" :showBack="false" />
+    <ai-nav-bar title="猫眼电影" :showBack="false" />
     <IsLogged v-if="isLogged"/>
     <NotLogged v-else/>
   </div>

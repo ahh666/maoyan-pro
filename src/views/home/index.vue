@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ai-navbar title="猫眼电影" :showBack="false" />
+    <ai-nav-bar title="猫眼电影" :showBack="false" />
     <div class="top">
       <div class="top-nav">
         <div @click="$router.push('/position')">

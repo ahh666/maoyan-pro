@@ -1,7 +1,7 @@
 <template>
   <ai-loading v-if="!isReady" />
   <div v-else>
-    <ai-navbar :title="movieDetail.nm" />
+    <ai-nav-bar :title="movieDetail.nm" />
     <TopIntro :movieDetail="movieDetail" />
     <StagePhoto :photos="movieDetail.photos" :photoTotal="movieDetail.pn" />
     <button class="buy-btn">特惠购票</button>

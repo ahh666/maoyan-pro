@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ai-navbar title="注 册"/>
+    <ai-nav-bar title="注 册"/>
     <div class="content">
       <input type="text" placeholder="昵称" v-model="nick"><br>
       <input type="text" placeholder="用户名" v-model="account"><br>

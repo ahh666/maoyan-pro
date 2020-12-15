@@ -2,7 +2,7 @@ import { Component, Vue, Prop } from 'vue-property-decorator'
 import './index.scss'
 
 @Component
-export default class TitleBar extends Vue {
+export default class AiTitleBar extends Vue {
   @Prop(String) private title: string
   @Prop({ type: Boolean, default: false }) private showRightBar: boolean
   @Prop([String, Number]) private rightInfo?: string | number

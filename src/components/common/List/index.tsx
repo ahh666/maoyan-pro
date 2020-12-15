@@ -3,7 +3,7 @@ import BScroll from 'better-scroll'
 import './index.scss'
 
 @Component
-export default class List extends Vue {
+export default class AiList extends Vue {
   @Prop({ type: Object, default: () => {} }) private options?: object
   @Prop({ type: Boolean, default: false }) private rowList?: boolean
   @Prop(Boolean) private finished?: boolean

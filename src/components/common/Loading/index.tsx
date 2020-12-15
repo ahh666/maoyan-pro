@@ -1,7 +1,7 @@
 import { Component, Vue } from 'vue-property-decorator'
 import './index.scss'
 @Component
-export default class Loading extends Vue {
+export default class AiLoading extends Vue {
   protected render() {
     return (
       <div class="loading">

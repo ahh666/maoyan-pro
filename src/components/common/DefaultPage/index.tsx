@@ -3,7 +3,7 @@ import { Component, Vue, Prop } from 'vue-property-decorator'
 import './index.scss'
 
 @Component
-export default class DefaultPage extends Vue {
+export default class AiDefaultPage extends Vue {
   @Prop({ type: String, default: '暂无数据' }) private text: string
   @Prop({
     type: String,

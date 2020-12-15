@@ -3,7 +3,7 @@ import './index.scss'
 import Icon from '../Icon'
 
 @Component
-export default class SearchBar extends Vue {
+export default class AiSearchBar extends Vue {
   @Prop({ type: String, default: '搜索' }) private placeholder?: string
   @Prop({ type: String, default: '取消' }) private btnText?: string
   private timer: any = null
